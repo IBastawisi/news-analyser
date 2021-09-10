@@ -3,36 +3,30 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Test</title>
+  <title>News Analyser</title>
 </head>
 
 <body>
 
   <header>
-    <div class="">
-      Logo
-    </div>
-    <div class="">
-      navigation
-    </div>
+      News Analyser
   </header>
 
   <main>
     <section>
-      <form class="" onsubmit="return Client.handleSubmit(event)">
-        <input type="url" name="url" value="" placeholder="Article Url">
+      <form onsubmit="Client.handleSubmit(event)">
+        <input type="url" name="url" value="" required placeholder="Article Url">
         <button type="submit">Submit</button>
       </form>
     </section>
 
-    <section>
-      <strong>Form Results:</strong>
-      <div id="results"></div>
+    <section id="results">
+      <div></div>
     </section>
   </main>
 
   <footer>
-    <p>This is a footer</p>
+    <span>© 2021 News Analyser</span>
   </footer>
 
 </body>

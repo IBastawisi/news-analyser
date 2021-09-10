@@ -1,5 +1,7 @@
+import webpack from "webpack";
 import HtmlWebPackPlugin from "html-webpack-plugin"
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { GenerateSW } from "workbox-webpack-plugin";
 
 const config = {
   entry: './src/client/index.js',
@@ -36,6 +38,10 @@ const config = {
     new HtmlWebPackPlugin({
       template: "./src/client/views/index.html",
       filename: "./index.html",
+    }),
+    new GenerateSW(),
+    new webpack.DefinePlugin({
+      'NODE_ENV': 'production',
     })
   ]
 }

@@ -1,3 +1,4 @@
+import webpack from "webpack";
 import HtmlWebPackPlugin from "html-webpack-plugin"
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -47,6 +48,9 @@ const config = {
       // Automatically remove all unused webpack assets on rebuild
       cleanStaleWebpackAssets: true,
       protectWebpackAssets: false
+    }),
+    new webpack.DefinePlugin({
+      'NODE_ENV': 'development',
     })
   ]
 }
