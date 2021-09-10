@@ -6,9 +6,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server/index.js",
-    "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+    "start": "npm run server",
+    "client": "webpack-dev-server  --config webpack.dev.js --open",
+    "server": "node src/server/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -17,16 +19,20 @@
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.2.2",
     "sass": "^1.39.2",
     "sass-loader": "^12.1.0",
     "terser-webpack-plugin": "^5.2.4",
     "webpack": "^5.52.1",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.0"
   },
   "dependencies": {
     "axios": "^0.21.4",
+    "concurrently": "^6.2.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1"
   }
