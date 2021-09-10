@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This repo is your starter code for the project. It is the same as the starter code we began with in lesson 2. Install and configure Webpack just as we did in the course. Feel free to refer to the course repo as you build this one, and remember to make frequent commits and to create and merge branches as necessary!",
   "main": "src/server/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server/index.js",
@@ -21,6 +22,12 @@
     "sass": "^1.39.2",
     "sass-loader": "^12.1.0",
     "terser-webpack-plugin": "^5.2.4",
-    "webpack": "^5.52.0"
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
   }
 }
