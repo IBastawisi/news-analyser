@@ -1,7 +1,7 @@
-import { API_KEY } from './config.js';
-import axios from "axios";
+const { API_KEY } = require('./config');
+const axios = require('axios');
 
-export const sentimentAnalysis = async (url) => {
+const sentimentAnalysis = async (url) => {
   const response = await axios.get("https://api.meaningcloud.com/sentiment-2.1", {
     params: {
       key: API_KEY,
@@ -11,3 +11,5 @@ export const sentimentAnalysis = async (url) => {
   });
   return response.data;
 }
+
+module.exports = { sentimentAnalysis }

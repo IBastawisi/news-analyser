@@ -1,6 +1,6 @@
-import express from 'express';
-import { sentimentAnalysis } from "./API.js";
-import { PORT } from './config.js';
+const express = require('express');
+const { sentimentAnalysis } = require('./API');
+const { PORT } = require('./config');
 
 const app = express()
 

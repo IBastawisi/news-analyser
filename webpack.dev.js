@@ -1,9 +1,9 @@
-import webpack from "webpack";
-import HtmlWebPackPlugin from "html-webpack-plugin"
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const config = {
+module.exports = {
   entry: './src/client/index.js',
   mode: 'development',
   devtool: 'source-map',
@@ -38,7 +38,7 @@ const config = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
-    new HtmlWebPackPlugin({
+    new HtmlWebpackPlugin({
       template: "./src/client/views/index.html",
       filename: "./index.html",
     }),
@@ -54,5 +54,3 @@ const config = {
     })
   ]
 }
-
-export default config;
