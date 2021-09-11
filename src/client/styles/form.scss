@@ -1,18 +1,13 @@
 form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
-    input {
-        padding: 5px 20px;
-        width: 100%;
-        line-height: 16px;
-        margin: 10px 0;
-    }
-    button {
-        padding: 5px 20px;
-        width: 100%;
-        line-height: 16px;
-        margin: 10px 0;
-    }
+  padding: 2rem;
+  input {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  button {
+    padding: 0.5rem;
+    width: 100%;
+  }
 }
 

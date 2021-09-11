@@ -15,7 +15,7 @@ const fetchAnalysis = async (url, handleSuccess, handleError) => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    let result = await response.json();
+    const result = await response.json();
     handleSuccess(result);
   } catch (error) {
     handleError(error);
@@ -24,6 +24,8 @@ const fetchAnalysis = async (url, handleSuccess, handleError) => {
 
 const renderResult = result => {
   const btn = document.querySelector("form button[type=submit]")
+  const results = document.getElementById('results')
+
   btn.textContent = "Submit"
   btn.disabled = false
 
@@ -40,13 +42,15 @@ const renderResult = result => {
     card.insertAdjacentHTML('beforeend', `<h3>${result.status.msg}</h3>`)
   }
 
-
-  document.getElementById('results').replaceChildren(card)
+  results.innerHTML = '<h3>Results</h3>'
+  document.getElementById('results').appendChild(card)
 
 }
 
 const renderError = error => {
   const btn = document.querySelector("form button[type=submit]")
+  const results = document.getElementById('results')
+
   btn.textContent = "Submit"
   btn.disabled = false
 
@@ -55,7 +59,8 @@ const renderError = error => {
 
   card.insertAdjacentHTML('beforeend', `<h3>${error.message}</h3>`)
 
-  document.getElementById('results').replaceChildren(card)
+  results.innerHTML = '<h3>Results</h3>'
+  document.getElementById('results').appendChild(card)
 
 }
 export { handleSubmit }

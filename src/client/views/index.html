@@ -8,21 +8,17 @@
 
 <body>
 
-  <header>
-      News Analyser
-  </header>
+  <header>News Analyser</header>
 
   <main>
     <section>
       <form onsubmit="Client.handleSubmit(event)">
-        <input type="url" name="url" value="" required placeholder="Article Url">
+        <input type="url" name="url" value="" placeholder="Article Url" required autofocus>
         <button type="submit">Submit</button>
       </form>
     </section>
-
-    <section id="results">
-      <div></div>
-    </section>
+    <hr>
+    <section id="results"></section>
   </main>
 
   <footer>
