@@ -1,10 +1,17 @@
+import { checkURL } from "./urlChecker"
+
 function handleSubmit(event) {
   event.preventDefault()
   const url = event.target.url.value
   const btn = event.target.querySelector("button[type=submit]")
+  const results = document.getElementById('results')
+
+  const validationResult = checkURL(url);
+  if (!validationResult) return renderError({ message: "Invallid URL"})
 
   btn.disabled = true
   btn.textContent = "Processing.."
+  results.innerHTML = '<h3>Running Sentiment Analysis</h3>'
 
   fetchAnalysis(url, renderResult, renderError);
 }
