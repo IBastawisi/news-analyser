@@ -20,5 +20,14 @@
     margin: 0.25rem;
     border-radius: 1rem;
   }
+  .result-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.25rem;
+    flex-grow: 1;
+  }
+  hr {
+    width: 100%;
+  }
 }
-

@@ -7,7 +7,7 @@ function handleSubmit(event) {
   const results = document.getElementById('results')
 
   const validationResult = checkURL(url);
-  if (!validationResult) return renderError({ message: "Invallid URL"})
+  if (!validationResult) return renderError({ message: "Invallid URL" })
 
   btn.disabled = true
   btn.textContent = "Processing.."
@@ -40,6 +40,16 @@ const renderResult = result => {
   card.className = 'card';
 
   if (result.status.code === "0") {
+    card.insertAdjacentHTML('beforeend', `<div class='result-row'><p>Agreement</p><span>${result.agreement}</span></div>`)
+
+    card.insertAdjacentHTML('beforeend', `<div class='result-row'><p>Confidence</p><span>${result.confidence}%</span></div>`)
+
+    card.insertAdjacentHTML('beforeend', `<div class='result-row'><p>Irony</p><span>${result.irony}</span></div>`)
+
+    card.insertAdjacentHTML('beforeend', `<div class='result-row'><p>Score Tag</p><span>${result.score_tag}</span></div>`)
+
+    card.insertAdjacentHTML('beforeend', `<hr>`)
+
     card.insertAdjacentHTML('beforeend', '<h3>Concept List</h3>')
     result.sentimented_concept_list.forEach(({ form }) => card.insertAdjacentHTML('beforeend', `<span>${form}</span>`))
 
